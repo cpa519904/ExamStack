@@ -1,0 +1,10 @@
+rootProject.name = 'ExamStack'
+include ':Portal'
+include ':Management'
+include ':Common'
+include ':ScoreMarker'
+
+project(':Portal').projectDir = "$rootDir/portal" as File
+project(':Management').projectDir = "$rootDir/management" as File
+project(':Common').projectDir = "$rootDir/common" as File
+project(':ScoreMarker').projectDir = "$rootDir/scoreMarker" as File

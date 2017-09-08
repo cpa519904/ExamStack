@@ -1,0 +1,44 @@
+allprojects  {
+  apply plugin: 'maven'
+
+  group = 'com.examstack'
+version = '2.0.0'
+}
+
+subprojects {
+  apply plugin: 'java'
+  sourceCompatibility = 1.5
+  targetCompatibility = 1.5
+  tasks.withType(JavaCompile) {
+  	options.encoding = 'UTF-8'
+  }
+
+  
+  repositories {
+//    mavenLocal()
+//
+//    maven { url "http://repo.spring.io/milestone" }
+//    maven { url "http://repo.maven.apache.org/maven2" }
+    mavenLocal()
+    maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+    maven {
+      credentials {
+        username 'wei.wang'
+        password 'wwwj2014'
+      }
+      url "http://code.icaikee.cn:8081/nexus/content/repositories/releases/"
+    }
+    maven {
+      credentials {
+        username 'wei.wang'
+        password 'wwwj2014'
+      }
+      url "http://code.icaikee.cn:8081/nexus/content/repositories/thirdparty/"
+    }
+    maven { url "http://jcenter.bintray.com" }
+  }
+
+  
+  
+  
+}
