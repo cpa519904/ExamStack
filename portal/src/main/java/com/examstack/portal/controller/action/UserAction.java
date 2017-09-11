@@ -129,4 +129,12 @@ public class UserAction {
 		
 		return message;
 	}
+
+	public static void main(String[] args) {
+		String password = "123456" + "{" + "admin" + "}";
+		PasswordEncoder passwordEncoder = new StandardPasswordEncoderForSha1();
+		String resultPassword = passwordEncoder.encode(password);
+		System.out.println("UserAction.main");
+		System.out.println(resultPassword);
+	}
 }

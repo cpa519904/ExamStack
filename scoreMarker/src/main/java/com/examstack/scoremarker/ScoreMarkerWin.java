@@ -49,7 +49,7 @@ public class ScoreMarkerWin {
     public static void start(String[] args) {
     	
 
-		ScoreMarkerWin win = new ScoreMarkerWin();
+		final ScoreMarkerWin win = new ScoreMarkerWin();
     	win.init();
         System.out.println("start");
         Thread thread = new Thread(){

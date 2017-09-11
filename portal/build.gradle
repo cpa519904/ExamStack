@@ -1,5 +1,8 @@
+apply plugin: 'java'
 
 apply plugin: 'war'
+apply from: 'https://raw.github.com/akhikhl/gretty/master/pluginScripts/gretty.plugin'
+
 
 description = 'Portal'
 dependencies {
@@ -47,10 +50,20 @@ exclude(module: 'commons-logging')
     compile group: 'org.apache.poi', name: 'poi-excelant', version:'3.9'
     compile group: 'org.apache.poi', name: 'poi-ooxml', version:'3.8'
     compile group: 'org.apache.xmlbeans', name: 'xmlbeans', version:'2.4.0'
-    compile group: 'com.google.code.gson', name: 'gson', version:'2.2.2'
+    compile group: 'com.google.code.gson', name: 'gson', version: '2.2.2'
+//    compile group: 'com.google.code.kaptcha', name: 'kaptcha', version: '2.3'
     testCompile group: 'junit', name: 'junit', version:'4.8.2'
     testCompile group: 'org.springframework', name: 'spring-test', version:'4.1.4.RELEASE'
     testCompile group: 'pdfbox', name: 'pdfbox', version:'0.7.3'
     providedCompile group: 'javax.servlet', name: 'servlet-api', version:'2.5'
     providedCompile group: 'javax.servlet.jsp', name: 'jsp-api', version:'2.1'
+}
+gretty {
+    // 端口默认8080
+    // serlvetContainer 支持 jetty7/8/9，tomcat7/8
+    // contextPath 设置根路径，默认为项目名称
+//    port = 8081
+    httpPort = 8082
+//    serlvetContainer = 'jetty9'
+    contextPath = '/portal'
 }
